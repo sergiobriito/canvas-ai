@@ -1,7 +1,5 @@
 const LOCAL_SERVER_URL = "http://127.0.0.1:8000";
-const API_KEY = "";
-const MODEL = "nvidia/nemotron-3-super-120b-a12b:free";
-const MAX_INTERACTIONS = 50;
+const MAX_INTERACTIONS = 5;
 
 export class CanvasAgent {
     constructor(canvas) {
@@ -125,23 +123,20 @@ export class CanvasAgent {
             method: "POST",
 
             headers: {
-                "Authorization": `Bearer ${API_KEY}`,
                 "Content-Type": "application/json"
             },
 
             body: JSON.stringify({
-                model: MODEL,
-
                 messages: [{
                     role: "user",
                     content: prompt
                 }],
 
-                temperature: 0,
-
-                response_format: {
-                    type: "json_object"
-                }
+                max_tokens: 65536,
+                reasoning_budget: 16384,
+                stream: false,
+                temperature: 0.6,
+                top_p: 0.95
             })
         }
         );
@@ -166,9 +161,28 @@ export class CanvasAgent {
         try {
             return JSON.parse(content);
         } catch {
-            throw new Error(
-                "LLM returned invalid JSON."
-            );
+            let cleaned = content;
+
+            const fenceMatch = cleaned.match(/```(?:json)?\s*\n?([\s\S]*?)\n?\s*```/);
+            if (fenceMatch) {
+                cleaned = fenceMatch[1];
+            }
+
+            const firstBrace = cleaned.indexOf("{");
+            const lastBrace = cleaned.lastIndexOf("}");
+
+            if (firstBrace !== -1 && lastBrace > firstBrace) {
+                cleaned = cleaned.slice(firstBrace, lastBrace + 1);
+            }
+
+            try {
+                return JSON.parse(cleaned);
+            } catch {
+                this.log("Raw LLM response:", content);
+                throw new Error(
+                    "LLM returned invalid JSON."
+                );
+            }
         }
     }
 
@@ -230,6 +244,8 @@ export class CanvasAgent {
 
         this.log("Plan created: ", state.plan);
 
+        const maxInteractions = Math.max(MAX_INTERACTIONS, totalComponents * 2);
+
         let iteration = 0;
 
         state.agentContext = {
@@ -245,7 +261,7 @@ export class CanvasAgent {
                 item =>
                     item.status === "complete"
             ) &&
-            iteration < MAX_INTERACTIONS
+            iteration < maxInteractions
         ) {
             iteration++;
 

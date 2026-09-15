@@ -44,6 +44,8 @@ Every component must include:
 
 The description field is critical — it must be detailed enough for the drawing model to render the component correctly. Include:
 - EXACT colors as hex codes (not vague terms like "primary color")
+  GOOD: "#8B4513" (saddle brown for tree trunk), "#FFD700" (gold for bird beak)
+  AVOID: "brown", "yellow", "dark color"
 - Shape type (ellipse, bezier path, gradient fill, etc.)
 - Visual details (how it should look, shading direction, highlights)
 
@@ -73,51 +75,51 @@ Return exactly:
 
 {
   "visualStyle": {
-    "type": "clean vector",
+    "type": "string describing the overall style (e.g., 'detailed organic layered illustration')",
     "renderingMode": "Canvas 2D",
     "palette": {
-      "background": "#dce8f0",
-      "outline": "#2c2c2c",
-      "primary": "#5b8c3e",
-      "secondary": "#e8a535",
-      "accent": "#d45b3e",
-      "shadow": "#3a5a2a",
-      "highlight": "#f5e6b8"
+      "background": "#hexcode",
+      "outline": "#hexcode",
+      "primary": "#hexcode",
+      "secondary": "#hexcode",
+      "accent": "#hexcode",
+      "shadow": "#hexcode",
+      "highlight": "#hexcode"
     },
     "lighting": {
-      "direction": "top-left",
-      "intensity": 0.4,
-      "softness": 0.6
+      "direction": "top-left|top-right|bottom-left|bottom-right",
+      "intensity": 0.0-1.0,
+      "softness": 0.0-1.0
     },
     "outline": {
-      "color": "none",
-      "width": 0,
-      "lineCap": "round",
-      "lineJoin": "round"
+      "color": "none|#hexcode",
+      "width": 0-10,
+      "lineCap": "butt|round|square",
+      "lineJoin": "round|bevel|miter"
     }
   },
   "plan": [
     {
-      "name": "component_name",
-      "description": "Detailed description including exact hex colors, shape type, shading, and visual details",
+      "name": "string (e.g., 'bird_body', 'sky_gradient')",
+      "description": "Detailed description including EXACT hex colors, shape type, positioning, and visual details",
       "coordinates": {
-        "x": 0,
-        "y": 0,
-        "width": 100,
-        "height": 100
+        "x": 0-800,
+        "y": 0-600,
+        "width": 0-800,
+        "height": 0-600
       },
-      "zIndex": 0,
+      "zIndex": 0-100,
       "rendering": {
-        "primitives": ["path"],
-        "shading": "linear gradient from #aaa to #888",
-        "highlights": "radial highlight at top-left with #fff at 20% opacity",
-        "texture": "none",
-        "details": []
+        "primitives": ["array of: path, arc, ellipse, rect, line, etc."],
+        "shading": "description of gradients, shadows, highlights",
+        "highlights": "description of highlight placement and opacity",
+        "texture": "none|pattern description",
+        "details": ["array of sub-detail descriptions"]
       }
     }
   ]
 }
 
-CRITICAL: The schema above shows the required SHAPE only — do not copy its literal values. Every color must be a real, subject-appropriate hex color. Every rendering field must describe actual visual techniques. Center the subject within the canvas with comfortable margins.
+CRITICAL: Every color must be a real, subject-appropriate hex color. Every rendering field must describe actual visual techniques. Center the subject within the canvas with comfortable margins (at least 20px from edges).
 
 Return no fields other than visualStyle and plan.

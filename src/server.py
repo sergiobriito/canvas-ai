@@ -10,8 +10,8 @@ except ImportError:
     requests = None
 
 NVIDIA_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
-NVIDIA_API_KEY = "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"
-MODEL = "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+NVIDIA_API_KEY = ""
+MODEL = "nvidia/nemotron-3-ultra-550b-a55b"
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     daemon_threads = True
@@ -69,7 +69,6 @@ class DebugProxyHandler(BaseHTTPRequestHandler):
             "temperature": payload.get("temperature", 0.6),
             "top_p": payload.get("top_p", 0.95),
             "max_tokens": payload.get("max_tokens", 65536),
-            "reasoning_budget": payload.get("reasoning_budget", 16384),
         }
 
         if "prompt" in payload:

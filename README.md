@@ -40,23 +40,23 @@ The emphasis is on the structure of the loop and the execution model, not on ful
 
 ```mermaid
 flowchart LR
-    A[User enters prompt in browser] --> B[Frontend: src/index.html + src/script.js]
-    B --> C[CanvasAgent in src/agent.js]
-    C --> D[Planning prompt: src/prompts/planningPrompt.md]
-    D --> E[LLM returns visualStyle + plan]
-    E --> F[State tracking: plan, components, agentContext]
-    F --> G[For each pending component]
-    G --> H[Drawing prompt: src/prompts/drawingPrompt.md]
-    H --> I[LLM returns JavaScript drawing instruction]
-    I --> J[executeInstructions() runs on canvas 2D context]
-    J --> K[Component marked complete]
-    K --> L{All components complete?}
+    A[User prompt] --> B[Frontend\nsrc/index.html + src/script.js]
+    B --> C[CanvasAgent\nsrc/agent.js]
+    C --> D[Planning prompt\nsrc/prompts/planningPrompt.md]
+    D --> E[LLM returns\nvisualStyle + plan]
+    E --> F[State tracking\nplan + components + agentContext]
+    F --> G[Next pending component]
+    G --> H[Drawing prompt\nsrc/prompts/drawingPrompt.md]
+    H --> I[LLM returns canvas instruction]
+    I --> J[Canvas execution\n2D context]
+    J --> K[Component complete]
+    K --> L{All complete?}
     L -->|No| G
     L -->|Yes| M[Finished drawing]
 
-    N[Python proxy server: src/server.py] --> E
+    N[Python proxy\nsrc/server.py] --> E
     N --> I
-    N -->|forwards requests to NVIDIA API| O[NVIDIA model endpoint]
+    N -->|forward to NVIDIA| O[NVIDIA model endpoint]
 ```
 
 ## Flow process

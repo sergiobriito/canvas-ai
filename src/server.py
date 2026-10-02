@@ -1,118 +1,128 @@
 import json
 import os
+import shutil
+import subprocess
+import tempfile
 import time
-from http.server import BaseHTTPRequestHandler, HTTPServer
-from socketserver import ThreadingMixIn
+import webbrowser
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 
-try:
-    import requests
-except ImportError:
-    requests = None
+ROOT = Path(__file__).parent
+PORT = 8000
+CLAUDE_BIN = shutil.which("claude")
+MODEL = "opus"
+EFFORT = "high"
+TIMEOUT_SECONDS = 300
 
-NVIDIA_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
-NVIDIA_API_KEY = ""
-MODEL = "nvidia/nemotron-3-ultra-550b-a55b"
+SYSTEM_PROMPTS = {
+    task: (ROOT / "prompts" / f"{task}.md").read_text(encoding="utf-8")
+    for task in ("plan", "draw")
+}
 
-class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
-    daemon_threads = True
+WORK_DIR = tempfile.mkdtemp(prefix="canvas-ai-")
+
+CLAUDE_ENV = {k: v for k, v in os.environ.items() if k != "ANTHROPIC_API_KEY"}
 
 
-class DebugProxyHandler(BaseHTTPRequestHandler):
-    def _send_json_response(self, status_code, body_bytes):
-        self.send_response(status_code)
-        self.send_header("Access-Control-Allow-Origin", "*")
+def call_claude(task, prompt):
+    result = subprocess.run(
+        [
+            CLAUDE_BIN, "-p",
+            "--model", MODEL,
+            "--effort", EFFORT,
+            "--output-format", "json",
+            "--tools", "",
+            "--strict-mcp-config",
+            "--no-session-persistence",
+            "--system-prompt", SYSTEM_PROMPTS[task],
+        ],
+        input=prompt,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        cwd=WORK_DIR,
+        env=CLAUDE_ENV,
+        timeout=TIMEOUT_SECONDS,
+    )
+
+    if not result.stdout.strip():
+        raise RuntimeError(result.stderr.strip() or f"claude exited with code {result.returncode}")
+
+    data = json.loads(result.stdout)
+    if data.get("is_error"):
+        raise RuntimeError(data.get("result") or "Claude Code returned an error.")
+
+    return data
+
+
+class Server(ThreadingHTTPServer):
+    allow_reuse_address = False
+
+
+class Handler(SimpleHTTPRequestHandler):
+    def send_json(self, status, body):
+        payload = json.dumps(body).encode("utf-8")
+        self.send_response(status)
         self.send_header("Content-Type", "application/json")
-        self.send_header("Content-Length", str(len(body_bytes)))
+        self.send_header("Content-Length", str(len(payload)))
         self.end_headers()
-        self.wfile.write(body_bytes)
-        self.wfile.flush()
-
-    def do_OPTIONS(self):
-        self.send_response(200)
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Methods", "POST, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
-        self.send_header("Content-Length", "0")
-        self.end_headers()
-        self.wfile.flush()
+        self.wfile.write(payload)
 
     def do_POST(self):
-        api_key = NVIDIA_API_KEY
-        if not api_key:
-            self._send_json_response(500, json.dumps({
-                "error": "NVIDIA_API_KEY is not set. Export it in your shell before starting the server."
-            }).encode("utf-8"))
+        if self.path != "/api/llm":
+            self.send_json(404, {"error": "Not found"})
             return
 
-        content_length = int(self.headers.get("Content-Length", "0"))
-        raw_body = self.rfile.read(content_length) if content_length > 0 else b"{}"
-
         try:
-            payload = json.loads(raw_body.decode("utf-8"))
-        except Exception:
-            payload = {}
+            length = int(self.headers.get("Content-Length", "0"))
+            body = json.loads(self.rfile.read(length) or b"{}")
+            task, prompt = body["task"], body["prompt"]
+            if task not in SYSTEM_PROMPTS:
+                raise ValueError(f"Unknown task: {task}")
+        except (ValueError, KeyError, TypeError) as e:
+            self.send_json(400, {"error": f"Bad request: {e}"})
+            return
 
-        if not isinstance(payload, dict):
-            payload = {}
-
-        stream = bool(payload.get("stream", False))
-        headers = {
-            "Authorization": f"Bearer {api_key}",
-            "Accept": "text/event-stream" if stream else "application/json",
-            "Content-Type": "application/json",
-        }
-
-        upstream_payload = {
-            "model": payload.get("model", MODEL),
-            "messages": payload.get("messages", [{"role": "user", "content": ""}]),
-            "stream": stream,
-            "temperature": payload.get("temperature", 0.6),
-            "top_p": payload.get("top_p", 0.95),
-            "max_tokens": payload.get("max_tokens", 65536),
-        }
-
-        if "prompt" in payload:
-            upstream_payload["prompt"] = payload["prompt"]
-
+        start = time.time()
         try:
-            if requests is None:
-                raise RuntimeError("requests package is not installed")
-
-            print(f"[proxy] Calling NVIDIA API...")
-            start = time.time()
-
-            response = requests.post(
-                NVIDIA_URL,
-                headers=headers,
-                json=upstream_payload,
-                stream=stream,
-                timeout=300,
-            )
-
-            elapsed = time.time() - start
-            print(f"[proxy] NVIDIA responded {response.status_code} in {elapsed:.1f}s")
-
-            if stream:
-                self.send_response(response.status_code)
-                self.send_header("Access-Control-Allow-Origin", "*")
-                self.send_header("Content-Type", "text/event-stream")
-                self.end_headers()
-                for line in response.iter_lines():
-                    if line:
-                        self.wfile.write(line + b"\n")
-                        self.wfile.flush()
-            else:
-                self._send_json_response(response.status_code, response.content)
-
+            data = call_claude(task, prompt)
+        except subprocess.TimeoutExpired:
+            self.send_json(504, {"error": "Claude Code timed out."})
+            return
         except Exception as e:
-            print(f"[proxy] Error: {e}")
-            self._send_json_response(500, json.dumps({"error": str(e)}).encode("utf-8"))
+            print(f"[{task}] error: {e}", flush=True)
+            self.send_json(500, {"error": str(e)})
+            return
 
-        print("=" * 50)
+        raw = data.get("usage") or {}
+        usage = {
+            "input": raw.get("input_tokens", 0) + raw.get("cache_creation_input_tokens", 0),
+            "cached": raw.get("cache_read_input_tokens", 0),
+            "output": raw.get("output_tokens", 0),
+        }
+        print(
+            f"[{task}] {time.time() - start:.1f}s, in {usage['input']} "
+            f"(+{usage['cached']} cached), out {usage['output']} tokens",
+            flush=True,
+        )
+        self.send_json(200, {"text": data.get("result", ""), "usage": usage})
+
+    def log_message(self, format, *args):
+        pass
 
 
 if __name__ == "__main__":
-    server_address = ("127.0.0.1", 8000)
-    httpd = ThreadedHTTPServer(server_address, DebugProxyHandler)
-    print("Server running at http://127.0.0.1:8000")
-    httpd.serve_forever()
+    if not CLAUDE_BIN:
+        raise SystemExit("Claude Code CLI not found. Install it and run `claude` once to log in.")
+
+    try:
+        server = Server(("127.0.0.1", PORT), partial(Handler, directory=str(ROOT)))
+    except OSError:
+        raise SystemExit(f"Port {PORT} is already in use. Stop the other server first.")
+
+    url = f"http://127.0.0.1:{PORT}"
+    print(f"Canvas AI running at {url} (Claude Code, model: {MODEL}, effort: {EFFORT})")
+    webbrowser.open(url)
+    server.serve_forever()

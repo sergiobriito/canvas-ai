@@ -52,6 +52,19 @@ button:hover {
 	background: #444;
 }
 
+button:disabled {
+	background: #999;
+	cursor: wait;
+}
+
+#status {
+	width: 800px;
+	max-width: 100%;
+	min-height: 1.2em;
+	margin: 0 0 12px;
+	color: #555;
+}
+
 #canvas {
 	display: block;
 	width: 800px;

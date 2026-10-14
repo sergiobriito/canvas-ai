@@ -63,7 +63,7 @@ flowchart LR
 Each draw call needs some idea of what the rest of the picture looks like. The app gives it **text state**: the names and boxes of the other parts. This benchmark measures what happens when each call also gets a **screenshot** of the canvas drawn so far, and how many tokens that costs against how much image quality it adds.
 
 <p align="center">
-  <img src="docs/images/benchmark.png" width="860" alt="The cat and landscape prompts drawn with text state, a 50% screenshot and a 100% screenshot" />
+  <img src="docs/images/benchmark.png" width="860" alt="The cat, landscape and red bicycle prompts drawn with text state, a 50% screenshot and a 100% screenshot" />
 </p>
 
 ### Setup

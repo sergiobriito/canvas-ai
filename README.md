@@ -137,7 +137,7 @@ The difference comes from ordering: a screenshot only exists once the earlier pa
 
 ### Reproduce
 
-The harness is in [`bench/`](bench/README.md):
+[`bench/`](bench/README.md):
 
 ```bash
 cd bench

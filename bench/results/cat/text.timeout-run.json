@@ -1,0 +1,111 @@
+{
+  "variant": "text",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 8,
+    "input": 16,
+    "cacheWrite": 11701,
+    "cacheRead": 0,
+    "output": 8353,
+    "costUsd": 0.260732,
+    "totalInput": 11717
+  },
+  "wallSeconds": 725.036,
+  "failed": [
+    {
+      "part": "moon",
+      "error": "claude timed out"
+    }
+  ],
+  "calls": [
+    {
+      "part": "night_sky",
+      "seconds": 288.029,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1403,
+        "cacheRead": 0,
+        "output": 465
+      },
+      "costUsd": 0.020532
+    },
+    {
+      "part": "stars",
+      "seconds": 265.537,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1440,
+        "cacheRead": 0,
+        "output": 770
+      },
+      "costUsd": 0.026928
+    },
+    {
+      "part": "cat_tail",
+      "seconds": 179.797,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1465,
+        "cacheRead": 0,
+        "output": 1008
+      },
+      "costUsd": 0.031888
+    },
+    {
+      "part": "windowsill",
+      "seconds": 235.159,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1459,
+        "cacheRead": 0,
+        "output": 855
+      },
+      "costUsd": 0.02878
+    },
+    {
+      "part": "window_frame",
+      "seconds": 279.128,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1468,
+        "cacheRead": 0,
+        "output": 2133
+      },
+      "costUsd": 0.054411999999999995
+    },
+    {
+      "part": "cat_body",
+      "seconds": 144.987,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1486,
+        "cacheRead": 0,
+        "output": 1095
+      },
+      "costUsd": 0.03379600000000001
+    },
+    {
+      "part": "cat_face",
+      "seconds": 145.216,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1488,
+        "cacheRead": 0,
+        "output": 1062
+      },
+      "costUsd": 0.033152
+    },
+    {
+      "part": "cat_head",
+      "seconds": 187.628,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1492,
+        "cacheRead": 0,
+        "output": 965
+      },
+      "costUsd": 0.031244
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "request": "Draw a lighthouse on a rocky coast at sunset",
+  "judge": "opus/medium",
+  "scores": {
+    "text": {
+      "fidelity": 8.5,
+      "coherence": 6,
+      "craft": 7,
+      "overall": 7.166666666666667
+    },
+    "shot-half": {
+      "fidelity": 8.5,
+      "coherence": 7,
+      "craft": 7.5,
+      "overall": 7.666666666666667
+    },
+    "shot-full": {
+      "fidelity": 8.5,
+      "coherence": 6.5,
+      "craft": 8,
+      "overall": 7.666666666666667
+    }
+  },
+  "passes": [
+    {
+      "order": [
+        "text",
+        "shot-half",
+        "shot-full"
+      ],
+      "best": "shot-full",
+      "scores": {
+        "text": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "Clear lighthouse, rocks and sunset with a good water reflection. The lantern has no gallery railing. The rock ends in an abrupt vertical cut at the right, and its faint facets look muddy."
+        },
+        "shot-half": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "Clean tower with railing, a nice sun reflection column and soft clouds. The rock has the same abrupt flat right edge, the shading is plain, and the small wave squiggles look weak."
+        },
+        "shot-full": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 8,
+          "note": "The richest version, with stars, a faceted rock, foam, a railing and a glowing lamp. The flat cloud ellipses cross the sun oddly, and the rock is cut off abruptly at the right."
+        }
+      }
+    },
+    {
+      "order": [
+        "shot-full",
+        "shot-half",
+        "text"
+      ],
+      "best": "shot-half",
+      "scores": {
+        "shot-full": {
+          "fidelity": 9,
+          "coherence": 7,
+          "craft": 8,
+          "note": "Lighthouse with beams, faceted rock, and sunset reflection are all clear. Stray ripple marks are drawn on top of the rock at bottom right, and the haze bands look flat."
+        },
+        "shot-half": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Clean composition with soft clouds, rim-lit rock and a strong sun reflection. The surf marks sit slightly over the rock edge, and the tiny windows look sparse."
+        },
+        "text": {
+          "fidelity": 9,
+          "coherence": 6,
+          "craft": 7,
+          "note": "Good faceted rock and warm sun, but a window overlaps the door and the stars run in odd diagonal streaks."
+        }
+      }
+    }
+  ]
+}

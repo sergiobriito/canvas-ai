@@ -1,0 +1,106 @@
+{
+  "variant": "text",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 8,
+    "input": 16,
+    "cacheWrite": 11672,
+    "cacheRead": 0,
+    "output": 7859,
+    "costUsd": 0.25062000000000006,
+    "totalInput": 11688
+  },
+  "wallSeconds": 77.111,
+  "failed": [],
+  "calls": [
+    {
+      "part": "ground_shadow",
+      "seconds": 18.88,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1402,
+        "cacheRead": 0,
+        "output": 418
+      },
+      "costUsd": 0.019584
+    },
+    {
+      "part": "front_wheel",
+      "seconds": 21.546,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1461,
+        "cacheRead": 0,
+        "output": 793
+      },
+      "costUsd": 0.027556
+    },
+    {
+      "part": "rear_wheel",
+      "seconds": 22.552,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1464,
+        "cacheRead": 0,
+        "output": 991
+      },
+      "costUsd": 0.03154
+    },
+    {
+      "part": "frame",
+      "seconds": 19.281,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1529,
+        "cacheRead": 0,
+        "output": 923
+      },
+      "costUsd": 0.0307
+    },
+    {
+      "part": "handlebars",
+      "seconds": 23.596,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1436,
+        "cacheRead": 0,
+        "output": 1026
+      },
+      "costUsd": 0.032016
+    },
+    {
+      "part": "front_fork",
+      "seconds": 27.561,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1437,
+        "cacheRead": 0,
+        "output": 950
+      },
+      "costUsd": 0.030504
+    },
+    {
+      "part": "saddle",
+      "seconds": 26.145,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1461,
+        "cacheRead": 0,
+        "output": 759
+      },
+      "costUsd": 0.026876
+    },
+    {
+      "part": "crank_chain",
+      "seconds": 30.739,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1482,
+        "cacheRead": 0,
+        "output": 1999
+      },
+      "costUsd": 0.051844
+    }
+  ]
+}

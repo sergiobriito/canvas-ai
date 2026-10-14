@@ -1,0 +1,19 @@
+<h2>Summary</h2>
+<p>Across 6 prompts, the 50% screenshot scored about the same as text state (7.8 vs. 7.7) for 15% more input tokens. The 100% screenshot scored 7.3 for 48% more input tokens. Both screenshot variants took about 4× longer per drawing, because their calls can't run in parallel.</p>
+<ul>
+  <li><strong>Half-size screenshots (400×300)</strong> scored 7.8 against 7.7 for text state, a gap smaller than the judge's own variation (0.43 points on average for the same image scored in two orders). They cost 15% more input tokens (+221 per call) and 3% more in total.</li>
+  <li><strong>Full-size screenshots (800×600)</strong> scored 7.3, with the largest drop in coherence. They cost 48% more input tokens (+694 per call) and 17% more in total.</li>
+  <li><strong>Output tokens barely moved</strong> (−3% to −4%). The model writes about the same amount of code whether or not it can see the canvas, so the extra cost comes almost entirely from the image itself.</li>
+  <li><strong>Time per drawing.</strong> A screenshot only exists after the earlier parts are drawn, so the calls run one at a time. Measured with no other runs competing, text state took 77–95 s per drawing at 3 calls in parallel. Screenshot state took 372–406 s, about 35–42 s per part.</li>
+  <li><strong>Per prompt.</strong> Half-size screenshots scored highest on cube, cat, fruit and lighthouse, by 0.2–0.8 points. Text state scored highest on landscape (by 1.3) and bicycle (by 0.3).</li>
+</ul>
+<h3>Observations</h3>
+<p>The plan already gives each part exact pixel boxes, hex colors and the light direction, so the three variants produce very similar pictures for the same prompt. Parts are drawn back to front, so a screenshot only shows what lies behind the current part, not the parts that will later overlap it in front. Coherence is the criterion that moves most between variants.</p>
+<h3>How it was measured</h3>
+<ul>
+  <li>6 prompts, Claude Opus at effort high, through the same <code>claude -p</code> setup as <code>server.py</code> and the same <code>plan.md</code> / <code>draw.md</code> prompts.</li>
+  <li>One plan per prompt, shared by all three variants, so the only difference is what state each draw call receives. The screenshot variants keep the text summary and add the image on top.</li>
+  <li>Images were rendered headless with <code>@napi-rs/canvas</code>. Token counts include cached input. Cost is the API-equivalent figure the CLI reports; on a Pro or Max plan it shows up as usage, not money. The 6 plan calls add 7.9k input and 9.0k output tokens, shared equally by every variant, and are left out of the totals.</li>
+  <li>Quality comes from a blind judge (Opus, effort medium) that saw the three images unlabeled and scored fidelity, coherence and craft from 1 to 10. Each prompt was judged in two orders and the scores were averaged. The two orders picked the same winner in 4 of 6 prompts.</li>
+  <li>Limits: there is one run per prompt and variant, and the judge is a model. Read differences under about 0.5 points as ties. Two text runs first lost a part to a CLI timeout when about 30 calls were running at once. They were re-run alone, and the originals are kept as <code>*.timeout-run.*</code>.</li>
+</ul>

@@ -1,0 +1,82 @@
+{
+  "request": "Draw a bowl of fruit on a wooden table",
+  "judge": "opus/medium",
+  "scores": {
+    "text": {
+      "fidelity": 8.5,
+      "coherence": 6.5,
+      "craft": 7.5,
+      "overall": 7.5
+    },
+    "shot-half": {
+      "fidelity": 8,
+      "coherence": 7.5,
+      "craft": 7.5,
+      "overall": 7.666666666666667
+    },
+    "shot-full": {
+      "fidelity": 8,
+      "coherence": 6,
+      "craft": 7,
+      "overall": 7
+    }
+  },
+  "passes": [
+    {
+      "order": [
+        "text",
+        "shot-half",
+        "shot-full"
+      ],
+      "best": "shot-half",
+      "scores": {
+        "text": {
+          "fidelity": 9,
+          "coherence": 7,
+          "craft": 8,
+          "note": "Full fruit set with grapes and banana, nice wood grain; grapes poke through bowl rim and banana sits oddly behind rim line"
+        },
+        "shot-half": {
+          "fidelity": 8,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Clean composition, fruit sits plausibly in bowl; grapes partially hidden and smaller, banana tip overlaps rim awkwardly"
+        },
+        "shot-full": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "Similar scene but grapes float oddly above green apple and through rim, banana stem detached-looking"
+        }
+      }
+    },
+    {
+      "order": [
+        "shot-full",
+        "shot-half",
+        "text"
+      ],
+      "best": "shot-half",
+      "scores": {
+        "shot-full": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "All fruits present with nice shading; rim line cuts across fruit oddly, bowl back rim visible through fruit, grapes slightly floating above bowl."
+        },
+        "shot-half": {
+          "fidelity": 8,
+          "coherence": 7,
+          "craft": 7,
+          "note": "Fruits sit more naturally inside bowl, banana and grapes well placed; rim overlap still slightly flat, solid composition."
+        },
+        "text": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "Similar quality; banana stem pokes above, rim crosses fruit awkwardly, bowl base flat and small; good highlights."
+        }
+      }
+    }
+  ]
+}

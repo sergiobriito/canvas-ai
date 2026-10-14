@@ -1,0 +1,117 @@
+{
+  "variant": "shot-full",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 9,
+    "input": 18,
+    "cacheWrite": 19048,
+    "cacheRead": 0,
+    "output": 6527,
+    "costUsd": 0.282996,
+    "totalInput": 19066
+  },
+  "wallSeconds": 1314.184,
+  "failed": [],
+  "calls": [
+    {
+      "part": "sky",
+      "seconds": 206.585,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2093,
+        "cacheRead": 0,
+        "output": 411
+      },
+      "costUsd": 0.024971999999999998
+    },
+    {
+      "part": "sun",
+      "seconds": 285.832,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2121,
+        "cacheRead": 0,
+        "output": 317
+      },
+      "costUsd": 0.023316
+    },
+    {
+      "part": "clouds",
+      "seconds": 159.023,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2111,
+        "cacheRead": 0,
+        "output": 873
+      },
+      "costUsd": 0.034356
+    },
+    {
+      "part": "far_mountains",
+      "seconds": 147.287,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2132,
+        "cacheRead": 0,
+        "output": 853
+      },
+      "costUsd": 0.034124
+    },
+    {
+      "part": "far_hills",
+      "seconds": 128.75,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2100,
+        "cacheRead": 0,
+        "output": 905
+      },
+      "costUsd": 0.034907999999999995
+    },
+    {
+      "part": "near_hills",
+      "seconds": 106.42,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2128,
+        "cacheRead": 0,
+        "output": 801
+      },
+      "costUsd": 0.033052
+    },
+    {
+      "part": "river",
+      "seconds": 86.896,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2128,
+        "cacheRead": 0,
+        "output": 667
+      },
+      "costUsd": 0.030372
+    },
+    {
+      "part": "trees",
+      "seconds": 86.786,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2126,
+        "cacheRead": 0,
+        "output": 1161
+      },
+      "costUsd": 0.040235999999999994
+    },
+    {
+      "part": "flowers",
+      "seconds": 96.052,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2109,
+        "cacheRead": 0,
+        "output": 539
+      },
+      "costUsd": 0.02766
+    }
+  ]
+}

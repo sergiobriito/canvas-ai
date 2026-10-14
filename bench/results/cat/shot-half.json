@@ -1,0 +1,117 @@
+{
+  "variant": "shot-half",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 9,
+    "input": 18,
+    "cacheWrite": 15140,
+    "cacheRead": 0,
+    "output": 8920,
+    "costUsd": 0.29959199999999997,
+    "totalInput": 15158
+  },
+  "wallSeconds": 372.226,
+  "failed": [],
+  "calls": [
+    {
+      "part": "night_sky",
+      "seconds": 40.974,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1623,
+        "cacheRead": 0,
+        "output": 251
+      },
+      "costUsd": 0.018012
+    },
+    {
+      "part": "moon",
+      "seconds": 83.959,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1679,
+        "cacheRead": 0,
+        "output": 684
+      },
+      "costUsd": 0.02712
+    },
+    {
+      "part": "stars",
+      "seconds": 38.062,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1656,
+        "cacheRead": 0,
+        "output": 628
+      },
+      "costUsd": 0.025816
+    },
+    {
+      "part": "window_frame",
+      "seconds": 71.637,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1689,
+        "cacheRead": 0,
+        "output": 2134
+      },
+      "costUsd": 0.0562
+    },
+    {
+      "part": "windowsill",
+      "seconds": 31.452,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1674,
+        "cacheRead": 0,
+        "output": 1014
+      },
+      "costUsd": 0.03368
+    },
+    {
+      "part": "cat_tail",
+      "seconds": 32.781,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1687,
+        "cacheRead": 0,
+        "output": 905
+      },
+      "costUsd": 0.031604
+    },
+    {
+      "part": "cat_body",
+      "seconds": 27.11,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1711,
+        "cacheRead": 0,
+        "output": 1080
+      },
+      "costUsd": 0.035296
+    },
+    {
+      "part": "cat_head",
+      "seconds": 21.852,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1715,
+        "cacheRead": 0,
+        "output": 1164
+      },
+      "costUsd": 0.037008
+    },
+    {
+      "part": "cat_face",
+      "seconds": 23.355,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1706,
+        "cacheRead": 0,
+        "output": 1060
+      },
+      "costUsd": 0.034856
+    }
+  ]
+}

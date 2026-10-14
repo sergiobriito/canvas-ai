@@ -1,0 +1,106 @@
+{
+  "variant": "shot-full",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 8,
+    "input": 16,
+    "cacheWrite": 17173,
+    "cacheRead": 0,
+    "output": 8044,
+    "costUsd": 0.298328,
+    "totalInput": 17189
+  },
+  "wallSeconds": 1278.642,
+  "failed": [],
+  "calls": [
+    {
+      "part": "sunset_sky",
+      "seconds": 269.234,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2123,
+        "cacheRead": 0,
+        "output": 568
+      },
+      "costUsd": 0.028352
+    },
+    {
+      "part": "setting_sun",
+      "seconds": 302.769,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2150,
+        "cacheRead": 0,
+        "output": 779
+      },
+      "costUsd": 0.032788
+    },
+    {
+      "part": "sea",
+      "seconds": 166.56,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2149,
+        "cacheRead": 0,
+        "output": 960
+      },
+      "costUsd": 0.0364
+    },
+    {
+      "part": "rocky_coast",
+      "seconds": 146.871,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2188,
+        "cacheRead": 0,
+        "output": 1791
+      },
+      "costUsd": 0.053332000000000004
+    },
+    {
+      "part": "lighthouse_tower",
+      "seconds": 131.919,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2144,
+        "cacheRead": 0,
+        "output": 1562
+      },
+      "costUsd": 0.0484
+    },
+    {
+      "part": "lantern_room",
+      "seconds": 76.713,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2186,
+        "cacheRead": 0,
+        "output": 1238
+      },
+      "costUsd": 0.042256
+    },
+    {
+      "part": "light_beams",
+      "seconds": 92.717,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2123,
+        "cacheRead": 0,
+        "output": 887
+      },
+      "costUsd": 0.034732
+    },
+    {
+      "part": "seagulls",
+      "seconds": 81.561,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2110,
+        "cacheRead": 0,
+        "output": 259
+      },
+      "costUsd": 0.022068
+    }
+  ]
+}

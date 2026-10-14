@@ -1,0 +1,106 @@
+{
+  "variant": "shot-full",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 8,
+    "input": 16,
+    "cacheWrite": 17237,
+    "cacheRead": 0,
+    "output": 7869,
+    "costUsd": 0.29534,
+    "totalInput": 17253
+  },
+  "wallSeconds": 1263.876,
+  "failed": [],
+  "calls": [
+    {
+      "part": "ground_shadow",
+      "seconds": 335.961,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2096,
+        "cacheRead": 0,
+        "output": 415
+      },
+      "costUsd": 0.025076
+    },
+    {
+      "part": "rear_wheel",
+      "seconds": 235.666,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2158,
+        "cacheRead": 0,
+        "output": 981
+      },
+      "costUsd": 0.03689200000000001
+    },
+    {
+      "part": "front_wheel",
+      "seconds": 165.41,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2156,
+        "cacheRead": 0,
+        "output": 865
+      },
+      "costUsd": 0.034556
+    },
+    {
+      "part": "frame",
+      "seconds": 138.894,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2225,
+        "cacheRead": 0,
+        "output": 1118
+      },
+      "costUsd": 0.040168
+    },
+    {
+      "part": "front_fork",
+      "seconds": 83.83,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2131,
+        "cacheRead": 0,
+        "output": 975
+      },
+      "costUsd": 0.036556000000000005
+    },
+    {
+      "part": "handlebars",
+      "seconds": 116.572,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2133,
+        "cacheRead": 0,
+        "output": 1047
+      },
+      "costUsd": 0.038012000000000004
+    },
+    {
+      "part": "saddle",
+      "seconds": 95.73,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2158,
+        "cacheRead": 0,
+        "output": 924
+      },
+      "costUsd": 0.035752000000000006
+    },
+    {
+      "part": "crank_chain",
+      "seconds": 84.068,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 2180,
+        "cacheRead": 0,
+        "output": 1544
+      },
+      "costUsd": 0.048328
+    }
+  ]
+}

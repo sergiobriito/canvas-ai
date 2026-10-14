@@ -1,0 +1,82 @@
+{
+  "request": "Draw a red bicycle",
+  "judge": "opus/medium",
+  "scores": {
+    "text": {
+      "fidelity": 9,
+      "coherence": 8,
+      "craft": 8.5,
+      "overall": 8.5
+    },
+    "shot-half": {
+      "fidelity": 9,
+      "coherence": 8,
+      "craft": 7.5,
+      "overall": 8.166666666666666
+    },
+    "shot-full": {
+      "fidelity": 9,
+      "coherence": 8,
+      "craft": 7.5,
+      "overall": 8.166666666666666
+    }
+  },
+  "passes": [
+    {
+      "order": [
+        "text",
+        "shot-half",
+        "shot-full"
+      ],
+      "best": "text",
+      "scores": {
+        "text": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Clear red bicycle with good detail: toothed chainring, dashed chain, and a glossy frame. The head tube is slightly blocky."
+        },
+        "shot-half": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 7,
+          "note": "Nearly identical to Image 1 but simpler. The chain and chainring are less detailed and the head tube is thin."
+        },
+        "shot-full": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 7,
+          "note": "Nice curved handlebar, but the rear hub is plain and the chainring is simplified. Otherwise the same solid design."
+        }
+      }
+    },
+    {
+      "order": [
+        "shot-full",
+        "shot-half",
+        "text"
+      ],
+      "best": "text",
+      "scores": {
+        "shot-full": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Clean red bike with full parts; fork attaches to hub well, handlebar nicely shaped; chain thin, minor seat/handlebar simplicity"
+        },
+        "shot-half": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Nearly identical; slightly smaller handlebar, crank detail with bolts; solid but plain chain"
+        },
+        "text": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 9,
+          "note": "Adds chainring teeth, dotted chain, thicker head tube detail; most polished drivetrain"
+        }
+      }
+    }
+  ]
+}

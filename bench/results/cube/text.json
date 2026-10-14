@@ -1,0 +1,73 @@
+{
+  "variant": "text",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 5,
+    "input": 10,
+    "cacheWrite": 7107,
+    "cacheRead": 0,
+    "output": 2962,
+    "costUsd": 0.116136,
+    "totalInput": 7117
+  },
+  "wallSeconds": 520.798,
+  "failed": [],
+  "calls": [
+    {
+      "part": "floor_shadow",
+      "seconds": 187.274,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1367,
+        "cacheRead": 0,
+        "output": 191
+      },
+      "costUsd": 0.014764
+    },
+    {
+      "part": "blue_sphere",
+      "seconds": 198.189,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1425,
+        "cacheRead": 0,
+        "output": 586
+      },
+      "costUsd": 0.023128000000000003
+    },
+    {
+      "part": "cube_back_faces",
+      "seconds": 232.976,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1434,
+        "cacheRead": 0,
+        "output": 670
+      },
+      "costUsd": 0.02488
+    },
+    {
+      "part": "cube_edges",
+      "seconds": 279.323,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1418,
+        "cacheRead": 0,
+        "output": 783
+      },
+      "costUsd": 0.027012
+    },
+    {
+      "part": "cube_front_faces",
+      "seconds": 333.187,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1463,
+        "cacheRead": 0,
+        "output": 732
+      },
+      "costUsd": 0.026352
+    }
+  ]
+}

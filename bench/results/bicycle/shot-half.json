@@ -1,0 +1,106 @@
+{
+  "variant": "shot-half",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 8,
+    "input": 16,
+    "cacheWrite": 13445,
+    "cacheRead": 0,
+    "output": 6986,
+    "costUsd": 0.24734399999999998,
+    "totalInput": 13461
+  },
+  "wallSeconds": 1281.553,
+  "failed": [],
+  "calls": [
+    {
+      "part": "ground_shadow",
+      "seconds": 361.652,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1620,
+        "cacheRead": 0,
+        "output": 410
+      },
+      "costUsd": 0.021168
+    },
+    {
+      "part": "rear_wheel",
+      "seconds": 203.199,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1684,
+        "cacheRead": 0,
+        "output": 738
+      },
+      "costUsd": 0.02824
+    },
+    {
+      "part": "front_wheel",
+      "seconds": 164.331,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1682,
+        "cacheRead": 0,
+        "output": 1001
+      },
+      "costUsd": 0.033484
+    },
+    {
+      "part": "frame",
+      "seconds": 149.275,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1755,
+        "cacheRead": 0,
+        "output": 1012
+      },
+      "costUsd": 0.034288
+    },
+    {
+      "part": "front_fork",
+      "seconds": 76.867,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1661,
+        "cacheRead": 0,
+        "output": 714
+      },
+      "costUsd": 0.027576
+    },
+    {
+      "part": "handlebars",
+      "seconds": 149.613,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1660,
+        "cacheRead": 0,
+        "output": 903
+      },
+      "costUsd": 0.031348
+    },
+    {
+      "part": "saddle",
+      "seconds": 75.9,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1683,
+        "cacheRead": 0,
+        "output": 779
+      },
+      "costUsd": 0.029052
+    },
+    {
+      "part": "crank_chain",
+      "seconds": 97.801,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1700,
+        "cacheRead": 0,
+        "output": 1429
+      },
+      "costUsd": 0.042187999999999996
+    }
+  ]
+}

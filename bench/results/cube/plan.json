@@ -1,0 +1,79 @@
+{
+  "request": "Draw a blue circle inside a red cube",
+  "plan": {
+    "background": "#F4EDE4",
+    "palette": [
+      "#C62828",
+      "#8E1B1B",
+      "#F28B82",
+      "#1E5BB8",
+      "#0D2F66",
+      "#8FC1FF",
+      "#5A4A42",
+      "#FFF8F0"
+    ],
+    "light": "top-left",
+    "parts": [
+      {
+        "name": "floor_shadow",
+        "box": [
+          170,
+          470,
+          470,
+          90
+        ],
+        "desc": "Soft elliptical shadow under the cube, centered at (405,515) with radii 230x40, filled with a radial gradient from #5A4A42 at 45% alpha in the center to fully transparent at the edge."
+      },
+      {
+        "name": "cube_back_faces",
+        "box": [
+          200,
+          140,
+          400,
+          380
+        ],
+        "desc": "Inside walls of a red cube in oblique view: back face square (300,140)-(600,440), left wall polygon (200,220)-(300,140)-(300,440)-(200,520), floor polygon (200,520)-(300,440)-(600,440)-(500,520). Fill back face #8E1B1B, left wall a linear gradient #C62828 to #8E1B1B, floor #A32222, all opaque."
+      },
+      {
+        "name": "blue_sphere",
+        "box": [
+          300,
+          230,
+          200,
+          200
+        ],
+        "desc": "Blue ball floating inside the cube, centered at (400,330) with radius 100. Fill with a radial gradient offset toward the top-left (focus at 365,295): #8FC1FF at 0, #1E5BB8 at 0.55, #0D2F66 at 1. Add a small soft white #FFF8F0 highlight ellipse near (365,290)."
+      },
+      {
+        "name": "cube_front_faces",
+        "box": [
+          200,
+          140,
+          400,
+          380
+        ],
+        "desc": "Translucent front glass of the red cube drawn over the sphere: front face square (200,220)-(500,520), top face polygon (200,220)-(300,140)-(600,140)-(500,220), right face polygon (500,220)-(600,140)-(600,440)-(500,520). Fill the front with #C62828 at 28% alpha, the top with #F28B82 at 35% alpha, and the right with #8E1B1B at 35% alpha, so the blue sphere stays clearly visible."
+      },
+      {
+        "name": "cube_edges",
+        "box": [
+          195,
+          135,
+          410,
+          390
+        ],
+        "desc": "Stroke all 12 cube edges at 4px with round joins: outer silhouette and front edges in #8E1B1B, the three hidden back edges meeting at (300,440) as a dashed #8E1B1B line at 50% alpha. Add a thin #F28B82 highlight line along the top-left edges (200,220)-(300,140)-(600,140)."
+      }
+    ]
+  },
+  "call": {
+    "seconds": 41.552,
+    "usage": {
+      "input": 2,
+      "cacheWrite": 1315,
+      "cacheRead": 0,
+      "output": 1095
+    },
+    "costUsd": 0.032428000000000005
+  }
+}

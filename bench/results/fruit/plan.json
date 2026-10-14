@@ -1,0 +1,139 @@
+{
+  "request": "Draw a bowl of fruit on a wooden table",
+  "plan": {
+    "background": "#3b2a24",
+    "palette": [
+      "#8a5a34",
+      "#5e3a1f",
+      "#2a1a12",
+      "#d23a2c",
+      "#f2b632",
+      "#6a9a3a",
+      "#7a3e8e",
+      "#fff1d0"
+    ],
+    "light": "top-left",
+    "parts": [
+      {
+        "name": "back_wall",
+        "box": [
+          0,
+          0,
+          800,
+          360
+        ],
+        "desc": "Full-width rectangle with a radial gradient centered near the top-left (200,80), going from warm #5e3a1f to deep #2a1a12 at the edges, forming a dim, warm backdrop behind the table."
+      },
+      {
+        "name": "wooden_table",
+        "box": [
+          0,
+          340,
+          800,
+          260
+        ],
+        "desc": "Tabletop rectangle from y=340 to the bottom, filled with a vertical linear gradient from #8a5a34 at the top edge to #5e3a1f at the bottom. Overlay several thin wavy horizontal bezier grain lines in #5e3a1f at low opacity, plus a 4px highlight strip in #fff1d0 at 25% opacity along the front top edge at y=340."
+      },
+      {
+        "name": "bowl_shadow",
+        "box": [
+          220,
+          440,
+          380,
+          60
+        ],
+        "desc": "Soft elliptical shadow centered at (410,470) on the tabletop, drawn as an ellipse filled with a radial gradient from #2a1a12 at 60% opacity in the center to fully transparent at the rim, offset slightly right of the bowl to match light from the top-left."
+      },
+      {
+        "name": "bowl_back_rim",
+        "box": [
+          220,
+          300,
+          360,
+          60
+        ],
+        "desc": "Back inner rim of the bowl: an ellipse centered at (400,330), 360 wide and 60 tall, filled with dark #5e3a1f to read as the shadowed inside of the bowl behind the fruit, with a thin #8a5a34 outline."
+      },
+      {
+        "name": "grapes",
+        "box": [
+          440,
+          250,
+          130,
+          110
+        ],
+        "desc": "Cluster of about 14 overlapping small circles (radius ~16) at the right rear of the bowl, each filled with a radial gradient from #a86cc0 at the upper-left to #7a3e8e to #2a1a12 at the lower-right, with a tiny #fff1d0 specular dot on each; a short curved #5e3a1f stem rises from the top of the cluster with one small #6a9a3a leaf."
+      },
+      {
+        "name": "banana",
+        "box": [
+          250,
+          240,
+          240,
+          100
+        ],
+        "desc": "A long crescent banana arching across the back of the bowl from (260,320) up to (480,260), drawn as a closed bezier path filled with a linear gradient from #f2b632 on the top edge to a darker #c98a1a on the underside, with a thin brown #5e3a1f tip at each end and a pale #fff1d0 highlight stroke along its upper curve."
+      },
+      {
+        "name": "green_apple",
+        "box": [
+          420,
+          270,
+          110,
+          100
+        ],
+        "desc": "Rounded apple with a subtle top dimple sitting right of center in the bowl, drawn with bezier curves and filled with a radial gradient from #a8c860 at upper-left to #6a9a3a to #3e5e22 at lower-right, with a short #5e3a1f stem and a soft #fff1d0 highlight spot at upper-left."
+      },
+      {
+        "name": "red_apple",
+        "box": [
+          290,
+          265,
+          120,
+          110
+        ],
+        "desc": "Plump red apple at the center-left front of the fruit pile, shaped with bezier curves into a slightly heart-like top with a dimple, filled with a radial gradient from #ef6a52 at upper-left through #d23a2c to #7a1e16 at lower-right; a short curved #5e3a1f stem with a small #6a9a3a leaf and an oval #fff1d0 highlight at upper-left."
+      },
+      {
+        "name": "orange",
+        "box": [
+          370,
+          290,
+          100,
+          95
+        ],
+        "desc": "Round orange nestled in front between the two apples, an ellipse filled with a radial gradient from #ffc24a at upper-left through #f08a1c to #a8500e at lower-right, with a sparse stipple of tiny darker #c06a14 dots for peel texture, a small #6a9a3a calyx star on top, and a #fff1d0 glint."
+      },
+      {
+        "name": "bowl_body",
+        "box": [
+          210,
+          325,
+          380,
+          140
+        ],
+        "desc": "Front body of a ceramic bowl covering the lower half of the fruit: a closed bezier path starting at the left rim (220,330), sweeping down into a rounded belly to a flat foot at y=455, and back up to the right rim (580,330), with the top edge following the front half of the rim ellipse. Fill with a horizontal linear gradient from #f4e2c0 on the left to #b88a5a on the right, plus a curved #fff1d0 highlight streak on the upper-left belly."
+      },
+      {
+        "name": "bowl_front_rim",
+        "box": [
+          215,
+          320,
+          370,
+          24
+        ],
+        "desc": "Front lip of the bowl: the lower half of an ellipse centered at (400,330), 360 wide, stroked with a 6px band in #fff1d0 fading to #d8b88a toward the right, sitting over the top edge of the bowl body and over the bottoms of the fruit."
+      }
+    ]
+  },
+  "call": {
+    "seconds": 55.198,
+    "usage": {
+      "input": 2,
+      "cacheWrite": 1315,
+      "cacheRead": 0,
+      "output": 1646
+    },
+    "costUsd": 0.043448
+  }
+}

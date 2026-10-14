@@ -1,0 +1,13 @@
+{
+  "name": "canvas-ai-bench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "run": "node run.mjs",
+    "judge": "node judge.mjs",
+    "report": "node report.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.65"
+  }
+}

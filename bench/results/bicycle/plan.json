@@ -1,0 +1,109 @@
+{
+  "request": "Draw a red bicycle",
+  "plan": {
+    "background": "#F4EFE6",
+    "palette": [
+      "#D7263D",
+      "#8E1B2B",
+      "#FF8A8A",
+      "#2B2D42",
+      "#C9D1DC",
+      "#5C3A21",
+      "#CFC6B8",
+      "#F4EFE6"
+    ],
+    "light": "top-left",
+    "parts": [
+      {
+        "name": "ground_shadow",
+        "box": [
+          90,
+          505,
+          620,
+          40
+        ],
+        "desc": "A soft flat ellipse centered at (400,525), filled with a radial gradient from #CFC6B8 at the center to transparent #F4EFE6 at the edges. It sits under both wheels as a cast shadow."
+      },
+      {
+        "name": "rear_wheel",
+        "box": [
+          100,
+          260,
+          260,
+          260
+        ],
+        "desc": "Rear wheel centered at (230,390), outer radius 128: a thick #2B2D42 tire ring (lineWidth 16) with a thin #C9D1DC rim ring just inside it. Add 16 thin #C9D1DC spokes from a small #8E1B2B hub circle (radius 10) to the rim, plus a short #FF8A8A highlight arc on the upper-left of the tire."
+      },
+      {
+        "name": "front_wheel",
+        "box": [
+          440,
+          260,
+          260,
+          260
+        ],
+        "desc": "Front wheel centered at (570,390), outer radius 128: a thick #2B2D42 tire ring (lineWidth 16) with a thin #C9D1DC rim ring just inside it. Add 16 thin #C9D1DC spokes from a small #8E1B2B hub circle (radius 10) to the rim, plus a short #FF8A8A highlight arc on the upper-left of the tire."
+      },
+      {
+        "name": "frame",
+        "box": [
+          220,
+          205,
+          330,
+          205
+        ],
+        "desc": "Red diamond bicycle frame drawn as thick rounded stroked tubes (lineWidth 14, lineCap round) in #D7263D. Draw the seat tube from the bottom bracket (390,400) to (340,220), the top tube from (340,220) to (530,225), the down tube from (390,400) to (538,262), the chain stays from (390,400) to the rear hub (230,390), and the seat stays from (340,220) to (230,390). Overlay a thinner #FF8A8A highlight stroke along the top edge of each tube and a #8E1B2B shadow stroke along the bottom edge."
+      },
+      {
+        "name": "front_fork",
+        "box": [
+          520,
+          205,
+          60,
+          190
+        ],
+        "desc": "Short head tube as a rounded #8E1B2B quad from (528,215) to (542,268). A slightly curved fork drawn as a bezier stroke (lineWidth 10, #D7263D) from (540,265) bending forward to the front hub at (570,390), with a thin #FF8A8A highlight on its left side."
+      },
+      {
+        "name": "handlebars",
+        "box": [
+          490,
+          150,
+          115,
+          75
+        ],
+        "desc": "A #C9D1DC stem (lineWidth 8) rising from the head tube top at (530,215) to (540,180), then a swept-back curved handlebar drawn as a bezier from (540,180) curving back to (505,172) and forward to (590,185). Wrap both grip ends with short rounded #2B2D42 caps."
+      },
+      {
+        "name": "saddle",
+        "box": [
+          288,
+          175,
+          110,
+          50
+        ],
+        "desc": "A #C9D1DC seat post (lineWidth 7) from (340,222) up to (337,198). On top, a tapered saddle shape drawn with bezier curves, wide at the back (~(295,192)) and narrow at the nose (~(390,195)), filled with a vertical linear gradient from #5C3A21 to #2B2D42 and a small #FF8A8A highlight streak on its top-left."
+      },
+      {
+        "name": "crank_chain",
+        "box": [
+          225,
+          345,
+          220,
+          105
+        ],
+        "desc": "A chainring at the bottom bracket (390,400): a #C9D1DC circle of radius 26 with a toothed dashed outline and a #8E1B2B center. Draw a thin #2B2D42 chain loop as two straight lines from the chainring top and bottom to a small rear cog (radius 10) at (230,390), and a #C9D1DC crank arm from (390,400) to (420,440) ending in a rounded #2B2D42 pedal rectangle."
+      }
+    ]
+  },
+  "call": {
+    "seconds": 67.466,
+    "usage": {
+      "input": 2,
+      "cacheWrite": 1305,
+      "cacheRead": 0,
+      "output": 1777
+    },
+    "costUsd": 0.045988
+  }
+}

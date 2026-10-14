@@ -1,0 +1,100 @@
+{
+  "variant": "text",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 7,
+    "input": 14,
+    "cacheWrite": 10272,
+    "cacheRead": 0,
+    "output": 7588,
+    "costUsd": 0.233992,
+    "totalInput": 10286
+  },
+  "wallSeconds": 768.86,
+  "failed": [
+    {
+      "part": "ground_shadow",
+      "error": "claude timed out"
+    }
+  ],
+  "calls": [
+    {
+      "part": "rear_wheel",
+      "seconds": 373.141,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1466,
+        "cacheRead": 0,
+        "output": 993
+      },
+      "costUsd": 0.031596
+    },
+    {
+      "part": "front_wheel",
+      "seconds": 383.271,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1459,
+        "cacheRead": 0,
+        "output": 898
+      },
+      "costUsd": 0.02964
+    },
+    {
+      "part": "handlebars",
+      "seconds": 192.468,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1433,
+        "cacheRead": 0,
+        "output": 1567
+      },
+      "costUsd": 0.042812
+    },
+    {
+      "part": "frame",
+      "seconds": 281.73,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1528,
+        "cacheRead": 0,
+        "output": 1246
+      },
+      "costUsd": 0.037152
+    },
+    {
+      "part": "front_fork",
+      "seconds": 245.613,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1435,
+        "cacheRead": 0,
+        "output": 618
+      },
+      "costUsd": 0.023848
+    },
+    {
+      "part": "saddle",
+      "seconds": 142.571,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1467,
+        "cacheRead": 0,
+        "output": 787
+      },
+      "costUsd": 0.027484
+    },
+    {
+      "part": "crank_chain",
+      "seconds": 153.047,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1484,
+        "cacheRead": 0,
+        "output": 1479
+      },
+      "costUsd": 0.041460000000000004
+    }
+  ]
+}

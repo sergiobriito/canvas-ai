@@ -1,0 +1,106 @@
+{
+  "variant": "shot-half",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 8,
+    "input": 16,
+    "cacheWrite": 13394,
+    "cacheRead": 0,
+    "output": 8066,
+    "costUsd": 0.268536,
+    "totalInput": 13410
+  },
+  "wallSeconds": 1307.774,
+  "failed": [],
+  "calls": [
+    {
+      "part": "sunset_sky",
+      "seconds": 149.778,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1650,
+        "cacheRead": 0,
+        "output": 907
+      },
+      "costUsd": 0.031348
+    },
+    {
+      "part": "setting_sun",
+      "seconds": 367.726,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1683,
+        "cacheRead": 0,
+        "output": 522
+      },
+      "costUsd": 0.023912
+    },
+    {
+      "part": "sea",
+      "seconds": 179.261,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1672,
+        "cacheRead": 0,
+        "output": 1061
+      },
+      "costUsd": 0.034604
+    },
+    {
+      "part": "rocky_coast",
+      "seconds": 177.403,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1717,
+        "cacheRead": 0,
+        "output": 1754
+      },
+      "costUsd": 0.048824
+    },
+    {
+      "part": "lighthouse_tower",
+      "seconds": 118.395,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1672,
+        "cacheRead": 0,
+        "output": 1564
+      },
+      "costUsd": 0.044664
+    },
+    {
+      "part": "lantern_room",
+      "seconds": 91.558,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1714,
+        "cacheRead": 0,
+        "output": 1199
+      },
+      "costUsd": 0.037700000000000004
+    },
+    {
+      "part": "light_beams",
+      "seconds": 107.86,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1650,
+        "cacheRead": 0,
+        "output": 813
+      },
+      "costUsd": 0.029468
+    },
+    {
+      "part": "seagulls",
+      "seconds": 108.026,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1636,
+        "cacheRead": 0,
+        "output": 246
+      },
+      "costUsd": 0.018016
+    }
+  ]
+}

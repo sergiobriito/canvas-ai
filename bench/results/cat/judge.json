@@ -1,0 +1,82 @@
+{
+  "request": "Draw a cat sitting on a windowsill at night",
+  "judge": "opus/medium",
+  "scores": {
+    "text": {
+      "fidelity": 8.5,
+      "coherence": 7,
+      "craft": 7,
+      "overall": 7.5
+    },
+    "shot-half": {
+      "fidelity": 9,
+      "coherence": 8,
+      "craft": 8,
+      "overall": 8.333333333333334
+    },
+    "shot-full": {
+      "fidelity": 8.5,
+      "coherence": 7,
+      "craft": 7,
+      "overall": 7.5
+    }
+  },
+  "passes": [
+    {
+      "order": [
+        "text",
+        "shot-half",
+        "shot-full"
+      ],
+      "best": "shot-half",
+      "scores": {
+        "text": {
+          "fidelity": 8,
+          "coherence": 7,
+          "craft": 7,
+          "note": "Clear cat on sill with moon and stars; odd horizontal streaks in sky, tail base slightly awkward, front leg line only one side."
+        },
+        "shot-half": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Clean sky, symmetric leg lines, tail with shadow sits well on sill; polished and cohesive."
+        },
+        "shot-full": {
+          "fidelity": 8,
+          "coherence": 7,
+          "craft": 7,
+          "note": "Similar composition with sill shadow; visible line artifacts across moon and sky, single leg line, slightly less clean."
+        }
+      }
+    },
+    {
+      "order": [
+        "shot-full",
+        "shot-half",
+        "text"
+      ],
+      "best": "shot-half",
+      "scores": {
+        "shot-full": {
+          "fidelity": 9,
+          "coherence": 7,
+          "craft": 7,
+          "note": "Clear cat on sill with moon and stars; odd glowing outline on one side, tail flat, simple body"
+        },
+        "shot-half": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Cleanest version; tail grounded with shadow, wood texture, legs hinted; rim light still one-sided"
+        },
+        "text": {
+          "fidelity": 9,
+          "coherence": 7,
+          "craft": 7,
+          "note": "Similar; streaky line artifacts across sky, rim glow strong, sill top looks fine"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "request": "Draw a blue circle inside a red cube",
+  "judge": "opus/medium",
+  "scores": {
+    "text": {
+      "fidelity": 8,
+      "coherence": 6,
+      "craft": 7,
+      "overall": 7
+    },
+    "shot-half": {
+      "fidelity": 8.5,
+      "coherence": 7,
+      "craft": 7.5,
+      "overall": 7.666666666666667
+    },
+    "shot-full": {
+      "fidelity": 8,
+      "coherence": 6.5,
+      "craft": 7,
+      "overall": 7.166666666666667
+    }
+  },
+  "passes": [
+    {
+      "order": [
+        "text",
+        "shot-half",
+        "shot-full"
+      ],
+      "best": "shot-full",
+      "scores": {
+        "text": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "Clear blue sphere in a translucent red cube with a small glare. The sphere is not tinted by the front face, so it reads as pasted on top rather than inside."
+        },
+        "shot-half": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "Nice glass sheen and a reflection rim on the sphere. It still looks overlaid on the front face, with no tint applied."
+        },
+        "shot-full": {
+          "fidelity": 8,
+          "coherence": 7,
+          "craft": 7,
+          "note": "A diagonal glare stripe crosses the sphere, which helps sell it as behind the glass. Otherwise the same solid rendering as the others."
+        }
+      }
+    },
+    {
+      "order": [
+        "shot-full",
+        "shot-half",
+        "text"
+      ],
+      "best": "shot-half",
+      "scores": {
+        "shot-full": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "Blue sphere inside a translucent red cube; the right side of the sphere looks clipped flat at the front-face edge; the diagonal glass streak adds polish"
+        },
+        "shot-half": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Cleanest result: the full sphere sits within the cube with a subtle rim, consistent translucency and soft shading"
+        },
+        "text": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "The sphere is visibly clipped on the right edge; a small specular highlight on the front face is a nice touch but the effect is otherwise plain"
+        }
+      }
+    }
+  ]
+}

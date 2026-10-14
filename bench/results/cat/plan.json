@@ -1,0 +1,119 @@
+{
+  "request": "Draw a cat sitting on a windowsill at night",
+  "plan": {
+    "background": "#1a1d38",
+    "palette": [
+      "#0b1236",
+      "#2a3570",
+      "#f4ecc2",
+      "#6b4a3a",
+      "#3e2a22",
+      "#4a4e6e",
+      "#8fd14f",
+      "#e8a0a8"
+    ],
+    "light": "top-right",
+    "parts": [
+      {
+        "name": "night_sky",
+        "box": [
+          180,
+          60,
+          440,
+          360
+        ],
+        "desc": "Rectangle filling the window opening with a vertical linear gradient from #0b1236 at the top to #2a3570 at the bottom. It sits behind the window frame, cat and moon."
+      },
+      {
+        "name": "moon",
+        "box": [
+          480,
+          90,
+          100,
+          100
+        ],
+        "desc": "Full moon as a circle about 70px across, centered in this box, with a radial gradient from #f4ecc2 at the center to a slightly darker cream at the edge. Add a soft outer glow of #f4ecc2 at low alpha, plus two or three faint #2a3570-tinted crater ellipses. It sits in the upper right of the night sky."
+      },
+      {
+        "name": "stars",
+        "box": [
+          190,
+          70,
+          420,
+          250
+        ],
+        "desc": "About 25 tiny stars scattered across the sky, avoiding the moon area near x 480-580, y 90-190. Draw them as 1-3px #f4ecc2 dots at varied alpha, and make 3-4 of them small four-point sparkles drawn with thin crossed lines."
+      },
+      {
+        "name": "window_frame",
+        "box": [
+          160,
+          40,
+          480,
+          390
+        ],
+        "desc": "Wooden window frame: a thick 20px #6b4a3a rectangular border around the sky, plus a vertical and a horizontal 12px mullion crossing at the center to form four panes. Shade the left and bottom inner edges with #3e2a22 and add a thin #f4ecc2 highlight at low alpha along the top-right inner edges, where the moonlight catches them."
+      },
+      {
+        "name": "windowsill",
+        "box": [
+          120,
+          420,
+          560,
+          60
+        ],
+        "desc": "Protruding sill ledge as a rounded-corner slab: a top face from y 420 to 440 in #6b4a3a with a faint #f4ecc2 highlight line along its front edge, and a front face from y 440 to 480 filled with a vertical gradient from #6b4a3a to #3e2a22. It spans wider than the window frame above it."
+      },
+      {
+        "name": "cat_tail",
+        "box": [
+          450,
+          370,
+          150,
+          60
+        ],
+        "desc": "Thick tapering tail drawn as a filled bezier path that starts at the cat's lower right hip near (470,420), curves right along the top of the sill, and curls up at the tip near (590,385). Fill it in #4a4e6e, add a #f4ecc2 rim-light stroke at low alpha along its upper edge, and give the underside a #0b1236 shadow tone."
+      },
+      {
+        "name": "cat_body",
+        "box": [
+          315,
+          255,
+          180,
+          175
+        ],
+        "desc": "Seated cat body as a pear-shaped bezier path, narrow at the shoulders and wide at the haunches. Its flat base rests on the sill top at y 425, with two front paws as small rounded ovals at the bottom center. Fill with a radial gradient from #4a4e6e toward a darker #0b1236-tinted edge on the left, and add a thin #f4ecc2 rim-light stroke along the right contour facing the moon."
+      },
+      {
+        "name": "cat_head",
+        "box": [
+          340,
+          160,
+          130,
+          120
+        ],
+        "desc": "Rounded cat head as a slightly wide bezier shape with full cheeks, with two pointed triangular ears with curved sides at the top-left and top-right. The inner ears are filled #e8a0a8 at reduced alpha. Fill the head in #4a4e6e with a radial gradient lighter toward the upper right, add a #f4ecc2 rim-light stroke at low alpha along the right ear and cheek, and let the bottom overlap the top of the body."
+      },
+      {
+        "name": "cat_face",
+        "box": [
+          365,
+          200,
+          80,
+          60
+        ],
+        "desc": "Facial features centered on the head: two almond-shaped eyes filled with a #8fd14f radial gradient, each with a vertical slit pupil in #0b1236 and a tiny #f4ecc2 catchlight. Below them add a small triangular #e8a0a8 nose, a short W-shaped mouth stroked in #0b1236, and three thin #f4ecc2 whiskers at low alpha extending past each cheek."
+      }
+    ]
+  },
+  "call": {
+    "seconds": 122.222,
+    "usage": {
+      "input": 2,
+      "cacheWrite": 1311,
+      "cacheRead": 0,
+      "output": 2170
+    },
+    "costUsd": 0.053896
+  }
+}

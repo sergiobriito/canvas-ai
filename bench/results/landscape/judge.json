@@ -1,0 +1,82 @@
+{
+  "request": "Draw a landscape",
+  "judge": "opus/medium",
+  "scores": {
+    "text": {
+      "fidelity": 9,
+      "coherence": 8,
+      "craft": 8,
+      "overall": 8.333333333333334
+    },
+    "shot-half": {
+      "fidelity": 8.5,
+      "coherence": 6,
+      "craft": 6.5,
+      "overall": 7
+    },
+    "shot-full": {
+      "fidelity": 8.5,
+      "coherence": 5,
+      "craft": 6,
+      "overall": 6.5
+    }
+  },
+  "passes": [
+    {
+      "order": [
+        "text",
+        "shot-half",
+        "shot-full"
+      ],
+      "best": "text",
+      "scores": {
+        "text": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Clean, complete landscape with mountains, hills, river, trees and flowers; clouds are tidy and the composition holds together well."
+        },
+        "shot-half": {
+          "fidelity": 9,
+          "coherence": 6,
+          "craft": 6,
+          "note": "Good elements, but the large cloud's top is clipped flat and the trees merge into one overlapping blob."
+        },
+        "shot-full": {
+          "fidelity": 9,
+          "coherence": 5,
+          "craft": 6,
+          "note": "Nice mountains and river, but the clouds have visible rectangular glow boxes and translucent scalloped artifacts along their bottoms."
+        }
+      }
+    },
+    {
+      "order": [
+        "shot-full",
+        "shot-half",
+        "text"
+      ],
+      "best": "text",
+      "scores": {
+        "shot-full": {
+          "fidelity": 8,
+          "coherence": 5,
+          "craft": 6,
+          "note": "Complete landscape, but the clouds have odd rectangular bottoms with visible artifacts, and the river ends abruptly at the hill edge."
+        },
+        "shot-half": {
+          "fidelity": 8,
+          "coherence": 6,
+          "craft": 7,
+          "note": "Faceted mountains look good, but the top of the large cloud is clipped flat, there is a stray green line on the left hill, and the trees overlap heavily."
+        },
+        "text": {
+          "fidelity": 9,
+          "coherence": 8,
+          "craft": 8,
+          "note": "Clean clouds, layered hills with the river winding between them, and well-spaced trees; the most polished and cohesive of the three."
+        }
+      }
+    }
+  ]
+}

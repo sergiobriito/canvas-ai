@@ -1,0 +1,109 @@
+{
+  "request": "Draw a lighthouse on a rocky coast at sunset",
+  "plan": {
+    "background": "#2a1b3d",
+    "palette": [
+      "#ff8c42",
+      "#f9c74f",
+      "#c8553d",
+      "#5e3a6e",
+      "#2a1b3d",
+      "#f4ece1",
+      "#3b2f4a",
+      "#fff3c4"
+    ],
+    "light": "top-left",
+    "parts": [
+      {
+        "name": "sunset_sky",
+        "box": [
+          0,
+          0,
+          800,
+          400
+        ],
+        "desc": "Full-width rectangle filled with a vertical linear gradient from deep plum #2a1b3d at top through #5e3a6e and #c8553d to warm orange #ff8c42 at the horizon line y=400. It sits behind everything as the sky."
+      },
+      {
+        "name": "setting_sun",
+        "box": [
+          480,
+          300,
+          180,
+          110
+        ],
+        "desc": "Half-disc sun of radius 80 centered at (570,400), clipped at the horizon y=400, filled with a radial gradient from #fff3c4 at center to #f9c74f to #ff8c42 at the edge, plus a soft #f9c74f outer glow ring at low alpha. It peeks above the sea to the right of the lighthouse."
+      },
+      {
+        "name": "sea",
+        "box": [
+          0,
+          400,
+          800,
+          200
+        ],
+        "desc": "Rectangle from y=400 to the bottom with a vertical linear gradient from #c8553d at the horizon to #3b2f4a at the bottom. Add thin horizontal wavy bezier highlight strokes in #f9c74f and #fff3c4 at low alpha clustered below x=570 as the sun's reflection path."
+      },
+      {
+        "name": "rocky_coast",
+        "box": [
+          20,
+          360,
+          440,
+          240
+        ],
+        "desc": "Jagged, irregular rock mass drawn as a closed bezier/line path rising from the bottom-left edge to a lumpy plateau near y=380 around x=120-300, then sloping down into the sea near x=460. Fill with a linear gradient from #5e3a6e on the upper-left lit faces to #3b2f4a in shadow, with a few darker #2a1b3d crack lines and #c8553d rim-light edges on top-right facing the sun."
+      },
+      {
+        "name": "lighthouse_tower",
+        "box": [
+          170,
+          150,
+          100,
+          240
+        ],
+        "desc": "Tapered tower path, base 100px wide at y=390 narrowing to 64px at y=150, filled #f4ece1 with three horizontal #c8553d stripe bands following the taper. Shade the right third with a linear gradient to #5e3a6e at low alpha for roundness; it stands on the rocky plateau."
+      },
+      {
+        "name": "lantern_room",
+        "box": [
+          176,
+          90,
+          88,
+          64
+        ],
+        "desc": "Walkway gallery: a #3b2f4a rectangle 88px wide at y=146-154 with thin railing lines, then a 56px-wide glass lantern box from y=106-146 filled with a radial gradient of #fff3c4 to #f9c74f, with dark #3b2f4a vertical mullions. Topped by a #c8553d domed cap (quadratic curve) to y=90 with a small finial, sitting directly atop the tower."
+      },
+      {
+        "name": "light_beams",
+        "box": [
+          20,
+          60,
+          760,
+          120
+        ],
+        "desc": "Two translucent triangular beams fanning from the lantern center (220,126): one toward the upper left and one longer toward the right, filled with linear gradients from #fff3c4 at 0.5 alpha to transparent. Drawn over the sky for a glowing effect."
+      },
+      {
+        "name": "seagulls",
+        "box": [
+          400,
+          140,
+          180,
+          70
+        ],
+        "desc": "Three small seagull silhouettes as double-arc bezier 'M' strokes in #3b2f4a, 2px wide, of slightly varying sizes, scattered in the sky right of the lighthouse and above the sun."
+      }
+    ]
+  },
+  "call": {
+    "seconds": 48.108,
+    "usage": {
+      "input": 2,
+      "cacheWrite": 1316,
+      "cacheRead": 0,
+      "output": 1180
+    },
+    "costUsd": 0.034136
+  }
+}

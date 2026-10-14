@@ -1,0 +1,139 @@
+{
+  "variant": "shot-half",
+  "model": "opus",
+  "effort": "high",
+  "usage": {
+    "calls": 11,
+    "input": 22,
+    "cacheWrite": 18888,
+    "cacheRead": 0,
+    "output": 9081,
+    "costUsd": 0.332812,
+    "totalInput": 18910
+  },
+  "wallSeconds": 405.988,
+  "failed": [],
+  "calls": [
+    {
+      "part": "back_wall",
+      "seconds": 50.289,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1674,
+        "cacheRead": 0,
+        "output": 384
+      },
+      "costUsd": 0.02108
+    },
+    {
+      "part": "wooden_table",
+      "seconds": 78.677,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1729,
+        "cacheRead": 0,
+        "output": 654
+      },
+      "costUsd": 0.02692
+    },
+    {
+      "part": "bowl_shadow",
+      "seconds": 36.089,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1694,
+        "cacheRead": 0,
+        "output": 415
+      },
+      "costUsd": 0.021859999999999997
+    },
+    {
+      "part": "bowl_back_rim",
+      "seconds": 58.82,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1688,
+        "cacheRead": 0,
+        "output": 534
+      },
+      "costUsd": 0.024191999999999998
+    },
+    {
+      "part": "grapes",
+      "seconds": 24.866,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1745,
+        "cacheRead": 0,
+        "output": 685
+      },
+      "costUsd": 0.027667999999999998
+    },
+    {
+      "part": "banana",
+      "seconds": 40.764,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1725,
+        "cacheRead": 0,
+        "output": 730
+      },
+      "costUsd": 0.028407999999999996
+    },
+    {
+      "part": "green_apple",
+      "seconds": 37.173,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1718,
+        "cacheRead": 0,
+        "output": 1208
+      },
+      "costUsd": 0.037912
+    },
+    {
+      "part": "red_apple",
+      "seconds": 22.41,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1737,
+        "cacheRead": 0,
+        "output": 1595
+      },
+      "costUsd": 0.045804
+    },
+    {
+      "part": "orange",
+      "seconds": 26.963,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1719,
+        "cacheRead": 0,
+        "output": 1146
+      },
+      "costUsd": 0.036680000000000004
+    },
+    {
+      "part": "bowl_body",
+      "seconds": 17.466,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1765,
+        "cacheRead": 0,
+        "output": 1142
+      },
+      "costUsd": 0.036968
+    },
+    {
+      "part": "bowl_front_rim",
+      "seconds": 11.386,
+      "usage": {
+        "input": 2,
+        "cacheWrite": 1694,
+        "cacheRead": 0,
+        "output": 588
+      },
+      "costUsd": 0.02532
+    }
+  ]
+}
